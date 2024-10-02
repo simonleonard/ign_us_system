@@ -11,7 +11,8 @@ set(IGSIO_VERSION_MINOR "0")
 set(IGSIO_VERSION_PATCH "0")
 set(IGSIO_VERSION ${IGSIO_VERSION_MAJOR}.${IGSIO_VERSION_MINOR}.${IGSIO_VERSION_PATCH})
 
-set(vtkAddon_DIR /home/sleonard/ros/pluslib/build/vtkAddon)
+# no idea why this doesn't work with -D
+set(vtkAddon_DIR ${CMAKE_CURRENT_SOURCE_DIR}/../../../build/vtkAddon)
 set(CMAKE_MODULE_PATH
   ${CMAKE_CURRENT_SOURCE_DIR}/Modules
   ${CMAKE_MODULE_PATH}

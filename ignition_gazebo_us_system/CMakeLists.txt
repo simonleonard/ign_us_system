@@ -20,14 +20,13 @@ ign_find_package( ignition-sensors6 REQUIRED )
 find_package(PlusLib REQUIRED)
 find_package(VTK REQUIRED)
 
-set(PKG_PATH /home/sleonard/ros/pluslib)
+set(PKG_PATH ${CMAKE_CURRENT_SOURCE_DIR}/../../../)
 set(PlusLib_SRC    ${PKG_PATH}/src/ign_us_system/PlusLib/src)
 set(IGSIO_SRC      ${PKG_PATH}/src/ign_us_system/igsio)
 set(IGSIO_SRC      ${PKG_PATH}/src/igsio)
 set(IGSIO_BUILD    ${PKG_PATH}/build/igsio)
 set(VTKADDON_SRC   ${PKG_PATH}/src/vtkAddon)
 set(VTKADDON_BUILD ${PKG_PATH}/build/vtkAddon)
-
 
 include_directories( include
   ${PlusLib_SRC}/PlusCommon
