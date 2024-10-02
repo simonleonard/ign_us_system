@@ -20,7 +20,24 @@ ign_find_package( ignition-sensors6 REQUIRED )
 find_package(PlusLib REQUIRED)
 find_package(VTK REQUIRED)
 
-include_directories( include /home/sleonard/ros/pluslib/src/PlusLib/src/PlusCommon /home/sleonard/ros/pluslib/src/igsio/IGSIOCommon /home/sleonard/ros/pluslib/build/igsio /home/sleonard/ros/pluslib/build/igsio/IGSIOCommon /home/sleonard/ros/pluslib/src/vtkAddon /home/sleonard/ros/pluslib/build/vtkAddon /home/sleonard/ros/pluslib/src/PlusLib/src/PlusCommon/IO /home/sleonard/ros/pluslib/src/PlusLib/src/PlusUsSimulator )
+set(PKG_PATH /home/sleonard/ros/pluslib)
+set(PlusLib_SRC    ${PKG_PATH}/src/ign_us_system/PlusLib/src)
+set(IGSIO_SRC      ${PKG_PATH}/src/ign_us_system/igsio)
+set(IGSIO_SRC      ${PKG_PATH}/src/igsio)
+set(IGSIO_BUILD    ${PKG_PATH}/build/igsio)
+set(VTKADDON_SRC   ${PKG_PATH}/src/vtkAddon)
+set(VTKADDON_BUILD ${PKG_PATH}/build/vtkAddon)
+
+
+include_directories( include
+  ${PlusLib_SRC}/PlusCommon
+  ${PlusLib_SRC}/PlusCommon/IO
+  ${PlusLib_SRC}/PlusUsSimulator
+  ${IGSIO_SRC}/IGSIOCommon
+  ${IGSIO_BUILD}
+  ${IGSIO_BUILD}/IGSIOCommon
+  ${VTKADDON_SRC}
+  ${VTKADDON_BUILD} )
 
 add_library( us_sensor SHARED src/us_sensor.cpp )
 add_library( us_system SHARED src/us_system.cpp )
